@@ -1,0 +1,548 @@
+{
+	"info": {
+		"_postman_id": "b79aaa34-8f53-4142-a1fc-3a881b04d097",
+		"name": "Loan buy-back APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13063183"
+	},
+	"item": [
+		{
+			"name": "checks",
+			"item": [
+				{
+					"name": "fetch credit report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJoelFtTllqQ1JsTEwyWjh2dzEwTXpBSi1wY3I5a0k5ZThTYzNISVhzRVlrIn0.eyJleHAiOjE3MTYzOTU1NTMsImlhdCI6MTcxNjM5MjAxMywianRpIjoiNWU2YTZlNTQtMjkyMC00NWQ2LTgzYTItYThjNzgwZmY4MDU3IiwiaXNzIjoiaHR0cHM6Ly90ZXN0YXV0aHkudGhlb3h5Z2VuLmNvbS9yZWFsbXMvT3h5Z2VuIiwiYXVkIjpbInJlYWxtLW1hbmFnZW1lbnQiLCJhY2NvdW50Il0sInN1YiI6IjAwZjk4OTA5LTlkZDgtNGRhNS05MGNiLTQ3ZGQ0NGQ0YTAyOSIsInR5cCI6IkJlYXJlciIsImF6cCI6InB1YmxpYy11c2VyLXNlcnZpY2UiLCJzZXNzaW9uX3N0YXRlIjoiOGEzNTczYmMtM2Q1Yy00ODM1LTkxZDEtMjE3ZGE2ZGRlNjhkIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW94eWdlbiIsIm9mZmxpbmVfYWNjZXNzIiwiY3VzdG9tZXJzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbInZpZXctcmVhbG0iLCJtYW5hZ2UtdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyJdfSwicHVibGljLXVzZXItc2VydmljZSI6eyJyb2xlcyI6WyJjdXN0b21lcnMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiYXRoIiwic2lkIjoiOGEzNTczYmMtM2Q1Yy00ODM1LTkxZDEtMjE3ZGE2ZGRlNjhkIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiMjM0NzA2NDE5NjU5MCJ9.Kd6yk146d6vFxiBhCwOucnkKbKOAAJe0722_D5BIqna1CzJYjvKtKvT1W-AftHDeUNl2AL7Tu2bkAInVg5FVQAe9VsC2HdXp8_E-EPwNLY5siXgRZbBKHlLxB1EFYnMrKo8KTEYE_DHqKTCHJiyKjqmRdQY0TPkbsTQIReMIlCpte0fPrwh_xpUJwOaYOLzWVbNYlRP1u1_ScfraE48rsFIgFBVTJu6JJIue43MrBr2bY857vWh0g3T6e5XfhmP2O5bN4beu42bpvtJe5vOlbJ2pCp5Rl1KNcHIm9FTLf2929R9D4Qd-iDy1TQBnlsfqEDqQnI5tgFf6CYreT_pVrQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bvn\": \"22299104999\",\n    \"account_number\": \"0158369126\",\n    \"account_name\": \"ifeoluwa babalola\",\n    \"phone_number\": \"2347064196590\",\n    \"account_type\": \"individual\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://poc-test.theoxygen.com/services/eligibility/v1/admins/bureau/details",
+							"protocol": "https",
+							"host": [
+								"poc-test",
+								"theoxygen",
+								"com"
+							],
+							"path": [
+								"services",
+								"eligibility",
+								"v1",
+								"admins",
+								"bureau",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_category_name\": \"individual\",\n    \"phone_number\": \"2347064196590\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://poc-test.theoxygen.com/services/v1/admin/sales-agent/users/search-buy-back-customer",
+							"protocol": "https",
+							"host": [
+								"poc-test",
+								"theoxygen",
+								"com"
+							],
+							"path": [
+								"services",
+								"v1",
+								"admin",
+								"sales-agent",
+								"users",
+								"search-buy-back-customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create loan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlJHQkhudm5ITHpMZDE4TzF4YkZjNFRtWGJ2NENQQS1sZEJfMWZoTmxPc2siLCJhbGciOiJSUzI1NiIsIng1dCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSIsImtpZCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC82Y2U2Njg2MC01ZDg2LTQ5MmQtYjdjNC03YWNlNjA2MjgzYTcvIiwiaWF0IjoxNzExMTA5NTQ5LCJuYmYiOjE3MTExMDk1NDksImV4cCI6MTcxMTExNTIxNCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFUUUF5LzhXQUFBQTBOQUdKUTYwTGV4NUhOWlg1dDU4MHU1T3JzTG9jRWJjbGpUbStRenU4elVWSmdBQW0xYnJEbmhTK0Vpc1RVbTIiLCJhbXIiOlsicHdkIl0sImFwcF9kaXNwbGF5bmFtZSI6Ik94eUFkbWluVGVzdCIsImFwcGlkIjoiZDEzODljYzgtOTkzNC00ODcxLThiYjktMzA2MmY1MTZmZWViIiwiYXBwaWRhY3IiOiIwIiwiaWR0eXAiOiJ1c2VyIiwiaXBhZGRyIjoiMTAyLjg5LjM0LjEwMyIsIm5hbWUiOiJtb3NlIiwib2lkIjoiZmNiZWEyYzItZjVhNC00ZjgxLWE5OTMtNDgyMzJkZTIwMGI4IiwicGxhdGYiOiI1IiwicHVpZCI6IjEwMDMyMDAzNjUzMzQyMTciLCJyaCI6IjAuQVVZQVlHam1iSVpkTFVtM3hIck9ZR0tEcHdNQUFBQUFBQUFBd0FBQUFBQUFBQUM4QUdVLiIsInNjcCI6Im9wZW5pZCBwcm9maWxlIFVzZXIuUmVhZCBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6Il9WRDNVbE41Wjd2X1Bjb05IQzNvV19kbG5xQlQ4U2Npdmk3dGFwbGE1S3ciLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiTkEiLCJ0aWQiOiI2Y2U2Njg2MC01ZDg2LTQ5MmQtYjdjNC03YWNlNjA2MjgzYTciLCJ1bmlxdWVfbmFtZSI6Im1vc2VzQGF5b3F1aXJreWFob28ub25taWNyb3NvZnQuY29tIiwidXBuIjoibW9zZXNAYXlvcXVpcmt5YWhvby5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJ1WWRrRjNTaWhFNmVwLWQ2dGlHTEFBIiwidmVyIjoiMS4wIiwid2lkcyI6WyJjZjFjMzhlNS0zNjIxLTQwMDQtYTdjYi04Nzk2MjRkY2VkN2MiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6ImlzYUwzMUFWN3B6MHFWMkpVeVlDNndjcVM2YkdhdUtGV0RCanNpeVo0MWcifSwieG1zX3RjZHQiOjE0MDA1Nzg5MTh9.ZT0LjguCHOnoh89EB6FS2fuuypQpOaa4p7CCQKZLC_JNSjGceGe3GAj61I--mLmZiadoD831Mlo5v4iPPfUKGCDRx992bqv6dpFeQGPmM20Y0LnbrvIaIX316VG0rTEsafK3bwab4M3hTtKPVEKuUCHm570bjOqVfE_XPciqt4lDAd8Zo1aV2wJ101oSfUD_w-u6GNlnZCU-zzeoxuveP2E6s0da4Js8RgahrIF6QX6tyh1gUH7l8_Km7FnANNJAEI9KNqvwABPxO0XU5GRc5b4yE7AnuyuP0W7MizTxhjPMxwqg0pCWEBIL-aOaobcUTDJgV-m3mx918q99vbFrrQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identifier\": \"_VD3UlN5Z7v_PcoNHC3oW_dlnqBT8Scivi7tapla5Kw\",\n    \"charges\": [\n        {\n            \"charge_id\": 1,\n            \"amount\": 1,\n            \"due_date\": \"03 June 2024\"\n        },\n        {\n            \"charge_id\": 2,\n            \"amount\": 0.3,\n            \"due_date\": \"03 June 2024\"\n        }\n    ],\n    \"client_id\": \"2414\",\n    \"interest_rate_per_period\": 10,\n    \"product_id\": \"88\",\n    \"disbursement_data\": [],\n    \"amount\": \"1000\",\n    \"principal\": \"1000\",\n    \"loan_term_frequency\": 3,\n    \"loan_term_frequency_type\": \"2\",\n    \"number_of_repayments\": 3,\n    \"repayment_every\": 1,\n    \"repayment_frequency_type\": \"2\",\n    \"amortization_type\": \"1\",\n    \"is_equal_amortization\": false,\n    \"interest_type\": 0,\n    \"interest_calculation_period_type\": 1,\n    \"allow_partial_period_interest_calculation\": true,\n    \"in_arrears_tolerance\": 2,\n    \"transaction_processing_strategy_id\": \"1\",\n    \"rates\": [],\n    \"is_bnpl_loan\": \"false\",\n    \"requires_equity_contribution\": \"false\",\n    \"locale\": \"en\",\n    \"date_format\": \"dd MMMM yyyy\",\n    \"loan_type\": \"individual\",\n    \"expected_disbursement_date\": \"03 June 2024\",\n    \"submitted_on_date\": \"03 June 2024\",\n    \"link_account_id\": \"2158\",\n    \"account_number\": \"000002158\",\n    \"actual_disbursement_date\": \"03 June 2024\",\n    \"partner_name\": \"oxygen\",\n    \"partner_id\": 0,\n    \"loan_purpose_id\": \"93\",\n    \"phone_number\": \"2342005698572\",\n    \"user_phone_number\": \"2342005698572\",\n    \"device_id\": \"\",\n    \"channel\": \"web\",\n    \"user_category\": \"individual\",\n  \"loan_officer_id\": \"3\",\n  \"sales_agent\": \"true\",\n  \"note\": \"loan buyback\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://poc-test.theoxygen.com/services/admin/v1/admins/sales-agent/loans/create",
+							"protocol": "https",
+							"host": [
+								"poc-test",
+								"theoxygen",
+								"com"
+							],
+							"path": [
+								"services",
+								"admin",
+								"v1",
+								"admins",
+								"sales-agent",
+								"loans",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "release amount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transaction_id\": \"22965\",\n    \"account_id\": \"1190\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9199/v1/loans/buyback/remove-lien",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9199",
+							"path": [
+								"v1",
+								"loans",
+								"buyback",
+								"remove-lien"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "search loan buy-back customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_category_name\": \"individual\",\n    \"phone_number\": \"2342005698572\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/admins/sales-agent/users/search-buy-back-customer",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"admins",
+						"sales-agent",
+						"users",
+						"search-buy-back-customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch eligibility",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    //\"customer_id\": \"2414\",\n    //\"phone_number\": \"2342005698572\",\n    \"customer_id\": \"2295\",\n    \"phone_number\": \"2348161712176\",\n    \"user_category\": \"individual\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/admins/sales-agent/eligibility/fetch",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"admins",
+						"sales-agent",
+						"eligibility",
+						"fetch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch customer credit report",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account_number\": \"0158369126\",\n    \"phone_number\": \"2342005698572\",\n    \"user_category\": \"individual\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/admins/bureau/details",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"admins",
+						"bureau",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loan configuration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"126\",\n    \"user_category\": \"individual\",\n    \"client_id\": \"2022\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/admins/sales-agent/loans/configuration",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"admins",
+						"sales-agent",
+						"loans",
+						"configuration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create buy back loan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlJHQkhudm5ITHpMZDE4TzF4YkZjNFRtWGJ2NENQQS1sZEJfMWZoTmxPc2siLCJhbGciOiJSUzI1NiIsIng1dCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSIsImtpZCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC82Y2U2Njg2MC01ZDg2LTQ5MmQtYjdjNC03YWNlNjA2MjgzYTcvIiwiaWF0IjoxNzExMTA5NTQ5LCJuYmYiOjE3MTExMDk1NDksImV4cCI6MTcxMTExNTIxNCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFUUUF5LzhXQUFBQTBOQUdKUTYwTGV4NUhOWlg1dDU4MHU1T3JzTG9jRWJjbGpUbStRenU4elVWSmdBQW0xYnJEbmhTK0Vpc1RVbTIiLCJhbXIiOlsicHdkIl0sImFwcF9kaXNwbGF5bmFtZSI6Ik94eUFkbWluVGVzdCIsImFwcGlkIjoiZDEzODljYzgtOTkzNC00ODcxLThiYjktMzA2MmY1MTZmZWViIiwiYXBwaWRhY3IiOiIwIiwiaWR0eXAiOiJ1c2VyIiwiaXBhZGRyIjoiMTAyLjg5LjM0LjEwMyIsIm5hbWUiOiJtb3NlIiwib2lkIjoiZmNiZWEyYzItZjVhNC00ZjgxLWE5OTMtNDgyMzJkZTIwMGI4IiwicGxhdGYiOiI1IiwicHVpZCI6IjEwMDMyMDAzNjUzMzQyMTciLCJyaCI6IjAuQVVZQVlHam1iSVpkTFVtM3hIck9ZR0tEcHdNQUFBQUFBQUFBd0FBQUFBQUFBQUM4QUdVLiIsInNjcCI6Im9wZW5pZCBwcm9maWxlIFVzZXIuUmVhZCBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6Il9WRDNVbE41Wjd2X1Bjb05IQzNvV19kbG5xQlQ4U2Npdmk3dGFwbGE1S3ciLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiTkEiLCJ0aWQiOiI2Y2U2Njg2MC01ZDg2LTQ5MmQtYjdjNC03YWNlNjA2MjgzYTciLCJ1bmlxdWVfbmFtZSI6Im1vc2VzQGF5b3F1aXJreWFob28ub25taWNyb3NvZnQuY29tIiwidXBuIjoibW9zZXNAYXlvcXVpcmt5YWhvby5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJ1WWRrRjNTaWhFNmVwLWQ2dGlHTEFBIiwidmVyIjoiMS4wIiwid2lkcyI6WyJjZjFjMzhlNS0zNjIxLTQwMDQtYTdjYi04Nzk2MjRkY2VkN2MiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6ImlzYUwzMUFWN3B6MHFWMkpVeVlDNndjcVM2YkdhdUtGV0RCanNpeVo0MWcifSwieG1zX3RjZHQiOjE0MDA1Nzg5MTh9.ZT0LjguCHOnoh89EB6FS2fuuypQpOaa4p7CCQKZLC_JNSjGceGe3GAj61I--mLmZiadoD831Mlo5v4iPPfUKGCDRx992bqv6dpFeQGPmM20Y0LnbrvIaIX316VG0rTEsafK3bwab4M3hTtKPVEKuUCHm570bjOqVfE_XPciqt4lDAd8Zo1aV2wJ101oSfUD_w-u6GNlnZCU-zzeoxuveP2E6s0da4Js8RgahrIF6QX6tyh1gUH7l8_Km7FnANNJAEI9KNqvwABPxO0XU5GRc5b4yE7AnuyuP0W7MizTxhjPMxwqg0pCWEBIL-aOaobcUTDJgV-m3mx918q99vbFrrQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new_loan_details",
+							"value": "{\"admin_identifier\": \"_VD3UlN5Z7v_PcoNHC3oW_dlnqBT8Scivi7tapla5Kw\",\n  \"charges\": [\n    {\n      \"charge_id\": 1,\n      \"amount\": 1,\n      \"due_date\": \"07 June 2024\"\n    },\n    {\n      \"charge_id\": 2,\n      \"amount\": 0.3,\n      \"due_date\": \"07 June 2024\"\n    }\n  ],\n  \"client_id\": \"2295\",\n  \"interest_rate_per_period\": 10,\n  \"product_id\": \"88\",\n  \"disbursement_data\": [],\n  \"amount\": \"1000\",\n  \"principal\": \"1000\",\n  \"loan_term_frequency\": 3,\n  \"loan_term_frequency_type\": \"2\",\n  \"number_of_repayments\": 3,\n  \"repayment_every\": 1,\n  \"repayment_frequency_type\": \"2\",\n  \"amortization_type\": \"1\",\n  \"is_equal_amortization\": false,\n  \"interest_type\": 0,\n  \"interest_calculation_period_type\": 1,\n  \"allow_partial_period_interest_calculation\": true,\n  \"in_arrears_tolerance\": 2,\n  \"transaction_processing_strategy_id\": \"1\",\n  \"rates\": [],\n  \"is_bnpl_loan\": \"false\",\n  \"requires_equity_contribution\": \"false\",\n  \"locale\": \"en\",\n  \"date_format\": \"dd MMMM yyyy\",\n  \"loan_type\": \"individual\",\n  \"expected_disbursement_date\": \"07 June 2024\",\n  \"submitted_on_date\": \"07 June 2024\",\n  \"link_account_id\": \"2059\",\n  \"account_number\": \"000002059\",\n  \"actual_disbursement_date\": \"07 June 2024\",\n  \"partner_name\": \"oxygen\",\n  \"partner_id\": 0,\n  \"loan_purpose_id\": \"93\",\n  \"phone_number\": \"2348161712176\",\n  \"user_phone_number\": \"2348161712176\",\n  \"device_id\": \"\",\n  \"channel\": \"access\",\n  \"user_category\": \"individual\",\n  \"loan_officer_id\": \"3\",\n  \"sales_agent\": \"true\",\n  \"note\": \"loan buyback\",\n  \"loan_purpose\": \"Personal Loan\",\n  \"tenure\": 12,\n  \"first_name\": \"Ginikachi\",\n  \"last_name\": \"Okere\",\n  \"amount_to_be_disbursed\": \"600\"\n}",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "requests",
+							"value": "[\n    {\n      \"creditor_name\": \"Creditor A\",\n      \"loan_creation_date\": \"2023-01-01\",\n      \"outstanding_balance\": \"100\",\n      \"creditor_account_number\": \"123456789\"\n    },\n    {\n      \"creditor_name\": \"Creditor B\",\n      \"loan_creation_date\": \"2023-02-01\",\n      \"outstanding_balance\": \"200\",\n      \"creditor_account_number\": \"987654321\"\n    }\n  ]",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "postman-cloud:///1eefcc4e-689e-4390-9725-a25027aced2f"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "postman-cloud:///1eed6286-fc9b-44f0-924a-36c9fa443004"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/admins/sales-agent/loan-buy-back/create",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"admins",
+						"sales-agent",
+						"loan-buy-back",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove lien",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlJHQkhudm5ITHpMZDE4TzF4YkZjNFRtWGJ2NENQQS1sZEJfMWZoTmxPc2siLCJhbGciOiJSUzI1NiIsIng1dCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSIsImtpZCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC82Y2U2Njg2MC01ZDg2LTQ5MmQtYjdjNC03YWNlNjA2MjgzYTcvIiwiaWF0IjoxNzExMTA5NTQ5LCJuYmYiOjE3MTExMDk1NDksImV4cCI6MTcxMTExNTIxNCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFUUUF5LzhXQUFBQTBOQUdKUTYwTGV4NUhOWlg1dDU4MHU1T3JzTG9jRWJjbGpUbStRenU4elVWSmdBQW0xYnJEbmhTK0Vpc1RVbTIiLCJhbXIiOlsicHdkIl0sImFwcF9kaXNwbGF5bmFtZSI6Ik94eUFkbWluVGVzdCIsImFwcGlkIjoiZDEzODljYzgtOTkzNC00ODcxLThiYjktMzA2MmY1MTZmZWViIiwiYXBwaWRhY3IiOiIwIiwiaWR0eXAiOiJ1c2VyIiwiaXBhZGRyIjoiMTAyLjg5LjM0LjEwMyIsIm5hbWUiOiJtb3NlIiwib2lkIjoiZmNiZWEyYzItZjVhNC00ZjgxLWE5OTMtNDgyMzJkZTIwMGI4IiwicGxhdGYiOiI1IiwicHVpZCI6IjEwMDMyMDAzNjUzMzQyMTciLCJyaCI6IjAuQVVZQVlHam1iSVpkTFVtM3hIck9ZR0tEcHdNQUFBQUFBQUFBd0FBQUFBQUFBQUM4QUdVLiIsInNjcCI6Im9wZW5pZCBwcm9maWxlIFVzZXIuUmVhZCBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6Il9WRDNVbE41Wjd2X1Bjb05IQzNvV19kbG5xQlQ4U2Npdmk3dGFwbGE1S3ciLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiTkEiLCJ0aWQiOiI2Y2U2Njg2MC01ZDg2LTQ5MmQtYjdjNC03YWNlNjA2MjgzYTciLCJ1bmlxdWVfbmFtZSI6Im1vc2VzQGF5b3F1aXJreWFob28ub25taWNyb3NvZnQuY29tIiwidXBuIjoibW9zZXNAYXlvcXVpcmt5YWhvby5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJ1WWRrRjNTaWhFNmVwLWQ2dGlHTEFBIiwidmVyIjoiMS4wIiwid2lkcyI6WyJjZjFjMzhlNS0zNjIxLTQwMDQtYTdjYi04Nzk2MjRkY2VkN2MiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6ImlzYUwzMUFWN3B6MHFWMkpVeVlDNndjcVM2YkdhdUtGV0RCanNpeVo0MWcifSwieG1zX3RjZHQiOjE0MDA1Nzg5MTh9.ZT0LjguCHOnoh89EB6FS2fuuypQpOaa4p7CCQKZLC_JNSjGceGe3GAj61I--mLmZiadoD831Mlo5v4iPPfUKGCDRx992bqv6dpFeQGPmM20Y0LnbrvIaIX316VG0rTEsafK3bwab4M3hTtKPVEKuUCHm570bjOqVfE_XPciqt4lDAd8Zo1aV2wJ101oSfUD_w-u6GNlnZCU-zzeoxuveP2E6s0da4Js8RgahrIF6QX6tyh1gUH7l8_Km7FnANNJAEI9KNqvwABPxO0XU5GRc5b4yE7AnuyuP0W7MizTxhjPMxwqg0pCWEBIL-aOaobcUTDJgV-m3mx918q99vbFrrQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "request",
+							"value": "{\n    \"transaction_id\": \"23377\",\n    \"account_id\": \"2059\",\n    \"buyback_loan_identifier\": \"2bf234a4-379d-40fb-b660-11f0cdb1bc2a\"\n}\n",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "proof_of_liquidation",
+							"type": "file",
+							"src": "postman-cloud:///1eefcc4e-689e-4390-9725-a25027aced2f"
+						},
+						{
+							"key": "proof_of_liquidation",
+							"type": "file",
+							"src": "postman-cloud:///1eed6286-fc9b-44f0-924a-36c9fa443004"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/admins/sales-agent/loan-buy-back/remove-lien",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"admins",
+						"sales-agent",
+						"loan-buy-back",
+						"remove-lien"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "approve and disburse buy back loan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IlJHQkhudm5ITHpMZDE4TzF4YkZjNFRtWGJ2NENQQS1sZEJfMWZoTmxPc2siLCJhbGciOiJSUzI1NiIsIng1dCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSIsImtpZCI6IlhSdmtvOFA3QTNVYVdTblU3Yk05blQwTWpoQSJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC82Y2U2Njg2MC01ZDg2LTQ5MmQtYjdjNC03YWNlNjA2MjgzYTcvIiwiaWF0IjoxNzExMTA5NTQ5LCJuYmYiOjE3MTExMDk1NDksImV4cCI6MTcxMTExNTIxNCwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFUUUF5LzhXQUFBQTBOQUdKUTYwTGV4NUhOWlg1dDU4MHU1T3JzTG9jRWJjbGpUbStRenU4elVWSmdBQW0xYnJEbmhTK0Vpc1RVbTIiLCJhbXIiOlsicHdkIl0sImFwcF9kaXNwbGF5bmFtZSI6Ik94eUFkbWluVGVzdCIsImFwcGlkIjoiZDEzODljYzgtOTkzNC00ODcxLThiYjktMzA2MmY1MTZmZWViIiwiYXBwaWRhY3IiOiIwIiwiaWR0eXAiOiJ1c2VyIiwiaXBhZGRyIjoiMTAyLjg5LjM0LjEwMyIsIm5hbWUiOiJtb3NlIiwib2lkIjoiZmNiZWEyYzItZjVhNC00ZjgxLWE5OTMtNDgyMzJkZTIwMGI4IiwicGxhdGYiOiI1IiwicHVpZCI6IjEwMDMyMDAzNjUzMzQyMTciLCJyaCI6IjAuQVVZQVlHam1iSVpkTFVtM3hIck9ZR0tEcHdNQUFBQUFBQUFBd0FBQUFBQUFBQUM4QUdVLiIsInNjcCI6Im9wZW5pZCBwcm9maWxlIFVzZXIuUmVhZCBlbWFpbCIsInNpZ25pbl9zdGF0ZSI6WyJrbXNpIl0sInN1YiI6Il9WRDNVbE41Wjd2X1Bjb05IQzNvV19kbG5xQlQ4U2Npdmk3dGFwbGE1S3ciLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiTkEiLCJ0aWQiOiI2Y2U2Njg2MC01ZDg2LTQ5MmQtYjdjNC03YWNlNjA2MjgzYTciLCJ1bmlxdWVfbmFtZSI6Im1vc2VzQGF5b3F1aXJreWFob28ub25taWNyb3NvZnQuY29tIiwidXBuIjoibW9zZXNAYXlvcXVpcmt5YWhvby5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJ1WWRrRjNTaWhFNmVwLWQ2dGlHTEFBIiwidmVyIjoiMS4wIiwid2lkcyI6WyJjZjFjMzhlNS0zNjIxLTQwMDQtYTdjYi04Nzk2MjRkY2VkN2MiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6ImlzYUwzMUFWN3B6MHFWMkpVeVlDNndjcVM2YkdhdUtGV0RCanNpeVo0MWcifSwieG1zX3RjZHQiOjE0MDA1Nzg5MTh9.ZT0LjguCHOnoh89EB6FS2fuuypQpOaa4p7CCQKZLC_JNSjGceGe3GAj61I--mLmZiadoD831Mlo5v4iPPfUKGCDRx992bqv6dpFeQGPmM20Y0LnbrvIaIX316VG0rTEsafK3bwab4M3hTtKPVEKuUCHm570bjOqVfE_XPciqt4lDAd8Zo1aV2wJ101oSfUD_w-u6GNlnZCU-zzeoxuveP2E6s0da4Js8RgahrIF6QX6tyh1gUH7l8_Km7FnANNJAEI9KNqvwABPxO0XU5GRc5b4yE7AnuyuP0W7MizTxhjPMxwqg0pCWEBIL-aOaobcUTDJgV-m3mx918q99vbFrrQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"partner_name\": \"Oxygen\",\n  \"partner_id\": \"0\",\n  \"loan_product_identifier\": \"88\",\n  \"loan_id\": 2445,\n  \"loan_identifier\": \"e3b2598d-ff37-4965-8718-9cab47a7655e\",\n  \"payment_type_id\": 1,\n  \"transaction_amount\": 1000,\n  \"actual_disbursement_date\": \"7 June 2024\",\n  \"note\": \"This is a note.\",\n  \"account_number\": \"000002059\",\n  \"routing_code\": \"123\",\n  \"receipt_number\": \"123\",\n  \"bank_number\": \"009\",\n  \"locale\": \"en\",\n  \"date_format\": \"dd MMMM yyyy\",\n  \"phone_number\": \"2348161712176\",\n  \"device_id\": \"DID123\",\n  \"channel\": \"oxygen\",\n  \"route\": \"route123\",\n  \"loan_product_type\": \"individual\",\n  \"client_id\": \"2295\",\n  \"user_category\": \"individual\",\n  \"loan_amount_requested\": 1000,\n  \"email\": \"lolafiyin@gmail.com\",\n  \"sales_agent\": true,\n  \"user_name\": \"Ginikachi Okere\",\n  \"approved_on_date\": \"7 June 2024\",\n  \"approved_loan_amount\": 1000,\n  \"expected_disbursement_date\": \"7 June 2024\",\n  \"account_id\": \"2059\",\n  \"liquidation_amount\": \"300\",\n  \"final_amount_to_be_disbursed_to_wallet\": \"687\",\n  \"loan_buyback_identifier\": \"97e037e9-7657-4928-92f9-a8ca12f8213d\"\n}\n\n\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/admins/sales-agent/loan-buy-back/disburse",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"admins",
+						"sales-agent",
+						"loan-buy-back",
+						"disburse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sales agent loan buyback queue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sales_agent_identifier\": \"_VD3UlN5Z7v_PcoNHC3oW_dlnqBT8Scivi7tapla5Kw\",\n    \"page\": 0,\n    \"size\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/admins/sales-agent/loan-buy-back/queue/sales-agent",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"admins",
+						"sales-agent",
+						"loan-buy-back",
+						"queue",
+						"sales-agent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "operations admin loan buy back queue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"page\": 0,\n    \"size\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/admins/sales-agent/loan-buy-back/queue/operations-admin",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"admins",
+						"sales-agent",
+						"loan-buy-back",
+						"queue",
+						"operations-admin"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://poc-test.theoxygen.com/services/admin"
+		},
+		{
+			"key": "localUrl",
+			"value": "http://localhost:7001",
+			"type": "string"
+		}
+	]
+}
